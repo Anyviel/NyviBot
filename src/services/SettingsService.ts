@@ -26,9 +26,11 @@ class SettingsService {
     const settings = this.settingsRepository.create({
       chat,
       username
-    })
+    });
 
-    await this.settingsRepository.save(settings)
+    await this.settingsRepository.save(settings);
+
+    return settings;
   }
 }
 

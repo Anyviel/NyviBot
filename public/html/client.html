@@ -22,11 +22,9 @@
       </div>
 
       <div class="text_support">
-        <script id="email-template" type="text/template">
+        <script id="message-user-template" type="text/template">
           <div class="client">
             <span class="name">{{email}}</span>
-        </script>
-        <script id="message-user-template" type="text/template">
             <span class="client message">
               {{message}}
               <!-- <label class="date">{{date}}</label> -->
@@ -100,11 +98,12 @@
   <script>
     onLoad();
     const chat = document.getElementById("chat_help");
+    let buttonSupport = null;
 
     function onLoad() {
       fetch("http://localhost:3333/settings/admin").then((result) =>
         result.json().then((response) => {
-          const buttonSupport = document.getElementById("btn_support");
+          buttonSupport = document.getElementById("btn_support");
           if (!response.chat) {
             buttonSupport.style.display = "none";
           }
@@ -114,10 +113,12 @@
 
     function openChat() {
       chat.style.display = "block";
+      buttonSupport.style.display = "none";
     }
 
     function closeChat() {
       chat.style.display = "none";
+      buttonSupport.style.display = "block";
     }
 
     function keyUpTextHelp(event) {

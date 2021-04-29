@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <title></title>
+    <title>NyviChat - Client</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -117,8 +117,15 @@
     }
 
     function closeChat() {
-      chat.style.display = "none";
-      buttonSupport.style.display = "block";
+      const chatInSupport = document.getElementById("chat_in_support");
+      if (chatInSupport && chatInSupport.classList.contains("active")) {
+          chatInSupport.style.display = "none";
+          buttonSupport.style.display = "block";
+          chatInSupport.classList.remove("active");
+      } else {
+        chat.style.display = "none";
+        buttonSupport.style.display = "block";
+      }
     }
 
     function keyUpTextHelp(event) {

@@ -76,7 +76,7 @@ body {
   border-bottom: 5px solid #573c94;
 
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -252,16 +252,32 @@ body {
 
 .message_send {
   display: flex;
-  justify-content: space-between;
   border: 1px solid #555;
   align-items: center;
+  border-radius: 0 0 8px 8px;
+  padding: 0;
+  align-content: center;
 }
 
 .message_send input {
   outline: none;
-  height: 34px;
+  border: none;
+  background: #666;
+  color: #fff;
+  height: 36px;
   align-items: center;
-  width: 252px;
+  width: 100%;
+  margin: 0;
+  border-radius: 0 0 0 8px;
+}
+.message_send input::placeholder {
+  color: #fff;
+}
+
+.message_send .send_message_button {
+  background: #666;
+  border-radius: 0 0 8px 0;
+  padding: 0;
 }
 
 .btn_send {
